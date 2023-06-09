@@ -1,8 +1,39 @@
 local lsp = require('lsp-zero').preset('recommended')
+require("mason").setup({
+    ui = {
+        icons = {
+            package_pending = " ",
+            package_installed = " ",
+            package_uninstalled = " ﮊ",
+        },
 
+        keymaps = {
+            toggle_server_expand = "<CR>",
+            install_server = "i",
+            update_server = "u",
+            check_server_version = "c",
+            update_all_servers = "U",
+            check_outdated_servers = "C",
+            uninstall_server = "X",
+            cancel_installation = "<C-c>",
+        },
+    },
+})
+
+require("mason-lspconfig").setup {
+    ensure_installed = {
+        "lua_ls",
+        "cssls",
+        "html",
+        "tsserver",
+        "denols",
+        "pyright",
+        "rust_analyzer",
+    }
+}
 
 lsp.on_attach(function(client, bufnr)
-  local opts = lsp.default_keymaps({buffer = bufnr, remap=false})
+    local opts = lsp.default_keymaps({ buffer = bufnr, remap = false })
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
