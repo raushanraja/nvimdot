@@ -19,6 +19,9 @@ keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 keymap("i", "jk", "<esc>", opts)
 
+-- Save FIle
+keymap("n", "<leader>w", ":w<cr>", opts)
+
 -- Move Selected line up/down
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "L", ":m '>+1<CR>gv=gv", opts)
