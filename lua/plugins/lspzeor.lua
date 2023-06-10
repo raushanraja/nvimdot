@@ -15,6 +15,7 @@ return {
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
+    {'hrsh7th/cmp-buffer'}, -- Required
     {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
