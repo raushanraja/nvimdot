@@ -57,3 +57,7 @@ keymap("n", "<leader>j", ":LspZeroFormat<cr>", nonopts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- Lazygit Toggle
 keymap("n", "<leader>gg", ":LazyGit<cr>", opts)
+
+-- Comment Plugin
+keymap("n", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise.current()<cr>", opts)
+keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
