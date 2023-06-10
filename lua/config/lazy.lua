@@ -22,7 +22,7 @@ require("lazy").setup({
         lazy = false,
         version = false,
     },
-    checker = { enabled = true }, -- automatically check for plugin updates
+    checker = { enabled = false }, -- automatically check for plugin updates
     performance = {
         rtp = {
             disabled_plugins = {
@@ -32,10 +32,10 @@ require("lazy").setup({
             --    "getscriptPlugin",
             --    "gzip",
             --    "logipat",
-            --    "netrw",
-            --    "netrwPlugin",
-            --    "netrwSettings",
-            --    "netrwFileHandlers",
+            "netrw",
+            "netrwPlugin",
+            "netrwSettings",
+            "netrwFileHandlers",
             --    "matchit",
             --    "tar",
             --    "tarPlugin",

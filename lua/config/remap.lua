@@ -9,7 +9,7 @@ keymap("", ";", "l", opts)
 keymap("", "k", "k", opts)
 keymap("", "l", "j", opts)
 
-keymap("n", "<leader>pv", ":Ex<cr>", opts)
+-- keymap("n", "<leader>pv", ":Ex<cr>", opts)
 keymap("n", "<C-j>", "<C-w>h", opts)
 keymap("n", "<C-;", "<C-w>l", opts)
 keymap("n", "<C-l>", "<C-w>j", opts)
@@ -48,7 +48,12 @@ keymap("n", "<leader>Y", [["+Y]], nonopts)
 keymap("n", "<leader>ps", [["+p]], nonopts)
 keymap("v", "<leader>ps", [["+p]], nonopts)
 
-
-
+-- Set Captial Q no operation, Format using Space-j
 keymap("n", "Q", "<nop>", nonopts)
 keymap("n", "<leader>j", ":LspZeroFormat<cr>", nonopts)
+
+
+-- NVIMTreeToggle
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- Lazygit Toggle
+keymap("n", "<leader>gg", ":LazyGit<cr>", opts)
