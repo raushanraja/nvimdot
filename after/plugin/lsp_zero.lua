@@ -20,17 +20,6 @@ require("mason").setup({
     },
 })
 
-require("mason-lspconfig").setup {
-    ensure_installed = {
-        "lua_ls",
-        "cssls",
-        "html",
-        "tsserver",
-        "denols",
-        "pyright",
-        "rust_analyzer",
-    }
-}
 
 lsp.on_attach(function(client, bufnr)
     local opts = lsp.default_keymaps({ buffer = bufnr, remap = false })
@@ -47,12 +36,18 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
--- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+lsp.format_on_save({
+    format_opts = {
+        async = false,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['null-ls'] = { 'javascript', 'typescript', 'lua', 'python', 'rust' },
+    }
+})
+
 
 lsp.setup()
-
-
 
 -- Setup cmp
 local cmp = require('cmp')
