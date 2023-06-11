@@ -65,3 +65,17 @@ keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(v
 -- DAP
 keymap("n", "<leader>db", "<cmd> DapToggleBreakpoint <cr>", opts)
 keymap("n", "<leader>dpr", "<cmd>lua require('dap-python').test_method()<cr>", opts)
+
+
+-- ToggleTerm
+keymap("n", "<m-t>", "<cmd> lua TTerm(101, 'horizontal')<cr>", nonopts)
+keymap("t", "<m-t>", "<cmd> lua TTerm(101, 'horizontal')<cr>", nonopts)
+keymap("n", "<m-h>", "<cmd> lua TTerm(102, 'vertical',70)<cr>", nonopts)
+keymap("t", "<m-h>", "<cmd> lua TTerm(102, 'vertical',70)<cr>", nonopts)
+keymap("n", "<m-f>", "<cmd> lua TTerm(103, 'float')<cr>", nonopts)
+keymap("t", "<m-f>", "<cmd> lua TTerm(103, 'float')<cr>", nonopts)
+
+
+-- Swithc Buffers
+keymap("n", "<leader>bb", "<cmd> bnext<cr>", nonopts)
+keymap("n", "<tab>", "<C-w><C-w>", opts)
