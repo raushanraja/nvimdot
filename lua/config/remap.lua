@@ -61,3 +61,7 @@ keymap("n", "<leader>gg", ":LazyGit<cr>", opts)
 -- Comment Plugin
 keymap("n", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise.current()<cr>", opts)
 keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", opts)
+
+-- DAP
+keymap("n", "<leader>db", "<cmd> DapToggleBreakpoint <cr>", opts)
+keymap("n", "<leader>dpr", "<cmd>lua require('dap-python').test_method()<cr>", opts)
