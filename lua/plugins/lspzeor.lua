@@ -25,7 +25,7 @@ return {
             'williamboman/mason-lspconfig.nvim', -- Optional
             cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
             build = function()
-                pcall(vim.cmd, 'MasonUpdate')
+                pcall(vim.cmd, 'MasonInstallAll')
             end,
             config = function()
                 -- custom nvchad cmd to install all mason binaries listed
