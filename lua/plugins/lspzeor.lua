@@ -1,4 +1,5 @@
 local ensure_installed = {
+    "autopep8",
     "lua-language-server",
     "css-lsp",
     "html-lsp",
