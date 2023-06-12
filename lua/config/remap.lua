@@ -80,3 +80,7 @@ keymap("t", "<m-f>", "<cmd> lua TTerm(103, 'float')<cr>", nonopts)
 keymap("n", "<leader>bb", "<cmd> bnext<cr>", nonopts)
 keymap("n", "<tab>", "<C-w><C-w>", opts)
 keymap("n", "<m-q>", "<cmd> lua ExitPrompt()<cr>", opts)
+
+
+-- Diffview
+keymap("n", "<leader>df", "<cmd> DiffviewFileHistory %<cr>", nonopts)
