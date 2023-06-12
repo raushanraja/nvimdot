@@ -18,10 +18,7 @@ return {
     dependencies = {
         -- LSP Support
         { 'neovim/nvim-lspconfig' }, -- Required
-        {                            -- Optional
-            'williamboman/mason.nvim',
-
-        },
+        { 'williamboman/mason.nvim' },
         {
             'williamboman/mason-lspconfig.nvim', -- Optional
             cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
@@ -37,10 +34,19 @@ return {
                 vim.g.mason_binaries_list = ensure_installed
             end,
         },
+
         -- Autocompletion
-        { 'hrsh7th/nvim-cmp' },     -- Required
+        { 'hrsh7th/nvim-cmp', event = "InsertEnter" },                          -- Required
         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+        { "hrsh7th/cmp-nvim-lua" },
         { 'hrsh7th/cmp-buffer' },   -- Required
-        { 'L3MON4D3/LuaSnip' },     -- Required
+        { 'L3MON4D3/LuaSnip', dependencies = "rafamadriz/friendly-snippets", }, -- Required
+        { "saadparwaiz1/cmp_luasnip" },
+        { "hrsh7th/cmp-path" },
+
+
+        -- autopairing of (){}[] etc
+        { "windwp/nvim-autopairs", },
+
     }
 }

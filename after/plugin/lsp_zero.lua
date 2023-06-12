@@ -1,4 +1,7 @@
 local lsp = require('lsp-zero').preset('recommended')
+local cmp_opts = require("config.cmp")
+
+
 require("mason").setup({
     ui = {
         icons = {
@@ -51,18 +54,15 @@ lsp.setup()
 
 -- Setup cmp
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
+cmp.setup(cmp_opts)
 
-cmp.setup({
-    mapping = {
-        -- `Enter` key to confirm completion
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
-        -- Ctrl+Space to trigger completion menu
-        ['<C-Space>'] = cmp.mapping.complete(),
-
-        -- Navigate between snippet placeholder
-        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-    }
-})
+-- AUTOPAIR SETUP
+local autopairs_opts = {
+    fast_wrap = {},
+    disable_filetype = { "TelescopePrompt", "vim" },
+}
+require("nvim-autopairs").setup(autopairs_opts)
+-- setup cmp for autopairs
+local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
