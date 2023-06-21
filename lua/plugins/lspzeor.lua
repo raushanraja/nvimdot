@@ -48,5 +48,26 @@ return {
         -- autopairing of (){}[] etc
         { "windwp/nvim-autopairs", },
 
+        -- copilot
+        use {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+            config = function()
+              require("copilot").setup({
+                suggestion = {enabled = false},
+                panel = {enabled = false},
+              })
+            end,
+            dependencies = {
+                {
+                    "zbirenbaum/copilot-cmp",
+                    config = function ()
+                      require("copilot_cmp").setup()
+                    end
+                }
+            }
+        }        
+
     }
 }

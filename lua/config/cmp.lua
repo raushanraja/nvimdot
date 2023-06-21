@@ -13,7 +13,11 @@ local options = {
     },
     mapping = {
         -- `Enter` key to confirm completion
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<CR>'] = cmp.mapping.confirm(
+            { 
+                behavior = cmp.ConfirmBehavior.Replace,
+                select = false
+            }),
 
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
@@ -29,6 +33,7 @@ local options = {
     },
 
     sources = {
+        {name = 'copilot'},
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
