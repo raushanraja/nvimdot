@@ -49,7 +49,7 @@ return {
         { "windwp/nvim-autopairs", },
 
         -- copilot
-        use {
+        {
             "zbirenbaum/copilot.lua",
             cmd = "Copilot",
             event = "InsertEnter",
