@@ -17,3 +17,12 @@ function TTerm(count, direction, size)
     local term = Terminal:new { cmd = cmd, count = count, direction = direction, size = size }
     term:toggle(size, direction)
 end
+
+
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-w><C-w>]], opts)
+end
+
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
