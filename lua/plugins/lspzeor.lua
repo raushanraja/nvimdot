@@ -97,7 +97,7 @@ return {
                 end)
 
                 opts.mapping["<C-l>"] = cmp.mapping(function()
-                    if copilot.is_visible() then copilot.accept_word() end
+                    if copilot.is_visible() then copilot.accept() end
                 end)
 
                 opts.mapping["<C-down>"] = cmp.mapping(function()
