@@ -1,10 +1,10 @@
 local cmp = require("cmp")
 local cmp_action = require('lsp-zero').cmp_action()
 
-
 local options = {
+    preselect = cmp.PreselectMode.None,
     completion = {
-        completeopt = "menu,menuone",
+        completeopt = "menu,menuone,noselect",
     },
     snippet = {
         expand = function(args)
