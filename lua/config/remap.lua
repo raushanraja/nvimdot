@@ -89,3 +89,9 @@ keymap("n", "<m-q>", "<cmd> lua ExitPrompt()<cr>", opts)
 
 -- Diffview
 keymap("n", "<leader>df", "<cmd> DiffviewFileHistory %<cr>", nonopts)
+
+-- TroubleNvim
+keymap("n", "<leader>tt", "<cmd> TroubleToggle<cr>", nonopts)
+keymap("n", "<leader>td", "<cmd> TroubleToggle  document_diagnostics<cr>", nonopts)
+keymap("n", "<leader>tw", "<cmd> TroubleToggle  workspace_diagnostics<cr>", nonopts)
+keymap("n", "<leader>ta", "<cmd> TroubleToggle  quickfix<cr>", nonopts)
