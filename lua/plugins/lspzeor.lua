@@ -9,7 +9,6 @@ local ensure_installed = {
     "rust-analyzer",
     "rustfmt",
     "mypy",
-    "ruff",
     "debugpy",
 }
 return {
